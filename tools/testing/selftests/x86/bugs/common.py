@@ -19,18 +19,16 @@ def read_file(path):
 
 def cpuinfo_has(arg):
     cpuinfo = read_file('/proc/cpuinfo')
-    if arg in cpuinfo:
-        return True
-    return False
+    return cpuinfo is not None and arg in cpuinfo
 
 def cmdline_has(arg):
     cmdline = read_file('/proc/cmdline')
-    if arg in cmdline:
-        return True
-    return False
+    return cmdline is not None and arg in cmdline
 
 def cmdline_has_either(args):
     cmdline = read_file('/proc/cmdline')
+    if cmdline is None:
+        return False
     for arg in args:
         if arg in cmdline:
             return True
@@ -41,6 +39,8 @@ def cmdline_has_none(args):
 
 def cmdline_has_all(args):
     cmdline = read_file('/proc/cmdline')
+    if cmdline is None:
+        return False
     for arg in args:
         if arg not in cmdline:
             return False
@@ -51,9 +51,7 @@ def get_sysfs(bug):
 
 def sysfs_has(bug, mitigation):
     status = get_sysfs(bug)
-    if mitigation in status:
-        return True
-    return False
+    return status is not None and mitigation in status
 
 def sysfs_has_either(bugs, mitigations):
     for bug in bugs:

@@ -30,7 +30,7 @@ else
 fi
 
 # Prefixes for per-CPU scripts
-for ((i=0;i<$LKMM_JOBS;i++))
+for ((i=0;i<LKMM_JOBS;i++))
 do
 	echo T=$T >> $T/$i.sh
 	cat << '___EOF___' >> $T/$i.sh
@@ -54,7 +54,7 @@ do
 			fi
 			if test -n "$exitmsg"
 			then
-				echo ' !!! Herd' ${exitmsg}: $1
+				echo ' !!! Herd ' ${exitmsg}: $1
 			fi
 		fi
 	}
@@ -85,8 +85,8 @@ if grep -q '!!!' $T/*.sh.out
 then
 	echo ' ---' Summary: 1>&2
 	grep '!!!' $T/*.sh.out 1>&2
-	nfail="`grep '!!!' $T/*.sh.out | wc -l`"
-	echo 'Number of failed herd7 runs (e.g., timeout): ' $nfail 1>&2
+	nfail="$(grep -c '!!!' $T/*.sh.out)"
+	echo 'Number of failed herd7 runs (e.g., timeout): ' "$nfail" 1>&2
 	exit 1
 else
 	echo All runs completed successfully. 1>&2
