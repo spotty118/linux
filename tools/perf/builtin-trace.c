@@ -4290,7 +4290,7 @@ static int trace__expand_filter(struct trace *trace, struct evsel *evsel)
 
 				if (fmt->strtoul(right, right_size, &syscall_arg, &val)) {
 					char *n, expansion[19];
-					int expansion_lenght = scnprintf(expansion, sizeof(expansion), "%#" PRIx64, val);
+					int expansion_length = scnprintf(expansion, sizeof(expansion), "%#" PRIx64, val);
 					int expansion_offset = right - new_filter;
 
 					pr_debug("%s", expansion);
@@ -4302,7 +4302,7 @@ static int trace__expand_filter(struct trace *trace, struct evsel *evsel)
 					}
 					if (new_filter != evsel->filter)
 						free(new_filter);
-					left = n + expansion_offset + expansion_lenght;
+					left = n + expansion_offset + expansion_length;
 					new_filter = n;
 				} else {
 					pr_err("\"%.*s\" not found for \"%s\" in \"%s\", can't set filter \"%s\"\n",

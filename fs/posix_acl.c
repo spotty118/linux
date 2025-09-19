@@ -383,7 +383,7 @@ posix_acl_permission(struct mnt_idmap *idmap, struct inode *inode,
 	want &= MAY_READ | MAY_WRITE | MAY_EXEC;
 
 	FOREACH_ACL_ENTRY(pa, acl, pe) {
-                switch(pa->e_tag) {
+                switch (pa->e_tag) {
                         case ACL_USER_OBJ:
 				/* (May have been checked already) */
 				vfsuid = i_uid_into_vfsuid(idmap, inode);
@@ -459,7 +459,7 @@ static int posix_acl_create_masq(struct posix_acl *acl, umode_t *mode_p)
 	/* assert(atomic_read(acl->a_refcount) == 1); */
 
 	FOREACH_ACL_ENTRY(pa, acl, pe) {
-                switch(pa->e_tag) {
+                switch (pa->e_tag) {
                         case ACL_USER_OBJ:
 				pa->e_perm &= (mode >> 6) | ~S_IRWXO;
 				mode &= (pa->e_perm << 6) | ~S_IRWXU;
@@ -514,7 +514,7 @@ static int __posix_acl_chmod_masq(struct posix_acl *acl, umode_t mode)
 	/* assert(atomic_read(acl->a_refcount) == 1); */
 
 	FOREACH_ACL_ENTRY(pa, acl, pe) {
-		switch(pa->e_tag) {
+		switch (pa->e_tag) {
 			case ACL_USER_OBJ:
 				pa->e_perm = (mode & S_IRWXU) >> 6;
 				break;
