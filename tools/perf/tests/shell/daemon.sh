@@ -301,7 +301,7 @@ EOF
 	done
 
 	local one
-	one=`perf daemon --config ${config} -x: | wc -l`
+	one=$(perf daemon --config ${config} -x: | wc -l)
 
 	if [ ${one} -ne "1" ]; then
 		echo "FAILED: wrong list output"
@@ -422,7 +422,7 @@ EOF
 	local success=0
 	while [ ${retries} -lt 600 ] && [ ${success} -eq 0 ]; do
 		local files
-		files=`ls ${base}/session-test/*perf.data* 2> /dev/null | wc -l`
+		files=$(ls ${base}/session-test/*perf.data* 2> /dev/null | wc -l)
 		if [ ${signals} -eq 0 ]; then
 			perf daemon signal --config ${config} --session test
 			signals=1
