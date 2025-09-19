@@ -1869,7 +1869,7 @@ do {								\
 		printk(KERN_ERR "AFS: Assertion failed\n");	\
 		BUG();						\
 	}							\
-} while(0)
+} while (0)
 
 #define ASSERTCMP(X, OP, Y)						\
 do {									\
@@ -1882,7 +1882,7 @@ do {									\
 		       (unsigned long)(X), (unsigned long)(Y));		\
 		BUG();							\
 	}								\
-} while(0)
+} while (0)
 
 #define ASSERTRANGE(L, OP1, N, OP2, H)					\
 do {									\
@@ -1897,7 +1897,7 @@ do {									\
 		       (unsigned long)(H));				\
 		BUG();							\
 	}								\
-} while(0)
+} while (0)
 
 #define ASSERTIF(C, X)						\
 do {								\
@@ -1906,7 +1906,7 @@ do {								\
 		printk(KERN_ERR "AFS: Assertion failed\n");	\
 		BUG();						\
 	}							\
-} while(0)
+} while (0)
 
 #define ASSERTIFCMP(C, X, OP, Y)					\
 do {									\
@@ -1919,28 +1919,28 @@ do {									\
 		       (unsigned long)(X), (unsigned long)(Y));		\
 		BUG();							\
 	}								\
-} while(0)
+} while (0)
 
 #else
 
 #define ASSERT(X)				\
 do {						\
-} while(0)
+} while (0)
 
 #define ASSERTCMP(X, OP, Y)			\
 do {						\
-} while(0)
+} while (0)
 
 #define ASSERTRANGE(L, OP1, N, OP2, H)		\
 do {						\
-} while(0)
+} while (0)
 
 #define ASSERTIF(C, X)				\
 do {						\
-} while(0)
+} while (0)
 
 #define ASSERTIFCMP(C, X, OP, Y)		\
 do {						\
-} while(0)
+} while (0)
 
 #endif /* __KDEBUGALL */
