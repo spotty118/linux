@@ -77,7 +77,7 @@ static inline struct st_key *find_key(char *name)
 			return this;
 		this = this->next;
 	}
-	return this;
+	return NULL;
 }
 
 static inline struct st_key *add_key(char *name, int value, int shift)
