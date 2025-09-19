@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
 {
 	int fsfd, mfd;
 
-	/* Mount a publically available AFS filesystem */
+	/* Mount a publicly available AFS filesystem */
 	fsfd = fsopen("afs", 0);
 	if (fsfd == -1) {
 		perror("fsopen");

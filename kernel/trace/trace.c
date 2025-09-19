@@ -4591,7 +4591,7 @@ static const struct seq_operations tracer_seq_ops = {
  * ways, this function is only used to free its content, and not
  * the iterator itself. The only requirement to all the allocations
  * is that it must zero all fields (kzalloc), as freeing works with
- * ethier allocated content or NULL.
+ * either allocated content or NULL.
  */
 static void free_trace_iter_content(struct trace_iterator *iter)
 {
