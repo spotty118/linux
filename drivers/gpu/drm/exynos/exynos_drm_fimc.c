@@ -88,7 +88,7 @@ struct fimc_scaler {
  * @regs: memory mapped io registers.
  * @lock: locking of operations.
  * @clocks: fimc clocks.
- * @sc: scaler infomations.
+ * @sc: scaler information.
  * @pol: porarity of writeback.
  * @id: fimc id.
  * @irq: irq number.

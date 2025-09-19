@@ -2023,7 +2023,7 @@ static long userfaultfd_ioctl(struct file *file, unsigned cmd,
 	if (cmd != UFFDIO_API && !userfaultfd_is_initialized(ctx))
 		return -EINVAL;
 
-	switch(cmd) {
+	switch (cmd) {
 	case UFFDIO_API:
 		ret = userfaultfd_api(ctx, arg);
 		break;

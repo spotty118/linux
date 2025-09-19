@@ -869,7 +869,7 @@ do {							\
 	ret = value_set_##_type(cw, event, #_field, _event->_name._field);\
 	if (ret)					\
 		return -1;				\
-} while(0)
+} while (0)
 
 #define __FUNC_PROCESS_NON_SAMPLE(_name, body) 	\
 static int process_##_name##_event(const struct perf_tool *tool,	\
@@ -954,7 +954,7 @@ static char *change_name(char *name, char *orig_name, int dup)
 	if (dup >= 10)
 		goto out;
 	/*
-	 * Add '_' prefix to potential keywork.  According to
+	 * Add '_' prefix to potential keyword.  According to
 	 * Mathieu Desnoyers (https://lore.kernel.org/lkml/1074266107.40857.1422045946295.JavaMail.zimbra@efficios.com),
 	 * further CTF spec updating may require us to use '$'.
 	 */
@@ -994,7 +994,7 @@ static int event_class_add_field(struct bt_ctf_event_class *event_class,
 
 	name = field->name;
 
-	/* If 'name' is a keywork, add prefix. */
+	/* If 'name' is a keyword, add prefix. */
 	if (bt_ctf_validate_identifier(name))
 		name = change_name(name, field->name, -1);
 
@@ -1232,7 +1232,7 @@ static int setup_events(struct ctf_writer *cw, struct perf_session *session)
 			pr_err("Failed to add field '%s';\n", #n);\
 			return -1;				\
 		}						\
-	} while(0)
+	} while (0)
 
 #define __FUNC_ADD_NON_SAMPLE_EVENT_CLASS(_name, body) 		\
 static int add_##_name##_event(struct ctf_writer *cw)		\

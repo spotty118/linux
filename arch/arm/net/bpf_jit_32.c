@@ -2118,7 +2118,7 @@ static int build_body(struct jit_ctx *ctx)
 		if (ctx->target == NULL)
 			ctx->offsets[i] = ctx->idx;
 
-		/* If unsuccesful, return with error code */
+		/* If unsuccessful, return with error code */
 		if (ret)
 			return ret;
 	}

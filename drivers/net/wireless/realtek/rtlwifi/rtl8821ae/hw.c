@@ -2319,7 +2319,7 @@ void rtl8821ae_card_disable(struct ieee80211_hw *hw)
 		_rtl8821ae_poweroff_adapter(hw);
 	} else {
 		rtl_dbg(rtlpriv, COMP_INIT, DBG_DMESG, "Wowlan Supported.\n");
-		/* 3 <1> Prepare for configuring wowlan related infomations */
+		/* 3 <1> Prepare for configuring wowlan related information */
 		/* Clear Fw WoWLAN event. */
 		rtl_write_byte(rtlpriv, REG_MCUTST_WOWLAN, 0x0);
 

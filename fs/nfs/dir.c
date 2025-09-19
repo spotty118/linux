@@ -3048,7 +3048,7 @@ static int nfs_access_get_cached_locked(struct inode *inode, const struct cred *
 	int err;
 
 	spin_lock(&inode->i_lock);
-	for(;;) {
+	for (;;) {
 		if (nfsi->cache_validity & NFS_INO_INVALID_ACCESS)
 			goto out_zap;
 		cache = nfs_access_search_rbtree(inode, cred);
